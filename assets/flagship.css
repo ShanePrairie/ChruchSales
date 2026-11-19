@@ -35,3 +35,5 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cur
 html.motion-ok .reveal:not(.in-view){opacity:0;transform:translateY(28px)}
 html.motion-ok .reveal.in-view{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html.motion-ok .reveal:not(.in-view){opacity:1;transform:none}}
+
+/* Cloudflare webhook deployment trigger for updated Haven flagship release. */
