@@ -1,0 +1,73 @@
+# Modernized Ministry — ChurchSales
+
+A premium, mobile-first, **multi-page** site for [modernizedministry.com](https://modernizedministry.com), plus an interactive fictional flagship church demo.
+
+> GitHub repo is `ShanePrairie/ChruchSales` (original repository spelling). The customer-facing brand and domain are spelled correctly.
+
+## Pages
+
+| Route | Purpose |
+| --- | --- |
+| `/` | About Modernized Ministry: brand, why we exist, mission and story |
+| `/flagship/` | Interactive Haven Church flagship website *concept* (fictional) |
+| `/solutions/` | Church websites, texts, email, and digital ministry systems |
+| `/outreach/` | Interactive four-step guest journey / phone preview |
+| `/work/` | Original portfolio concepts, clearly labeled demonstrations |
+| `/packages/` | Presence / Connection / Flagship package outlines |
+| `/process/` | Discovery, design, build and ongoing support |
+| `/contact/` | Actual inquiry form backed by optional Cloudflare Pages Function |
+| `/privacy/` | Basic data handling notice; update upon adding analytics/integrations |
+
+## Development
+
+No npm or bundler required. Static HTML, one shared CSS file, one shared JS file, optimized local image assets.
+
+```sh
+python3 scripts/build.py   # rebuild static pages from the content source
+python3 -m http.server 8080
+# open http://localhost:8080
+```
+
+**Edit page copy/structure in `scripts/build.py`**, shared design in `assets/site.css`, and interactions in `assets/site.js`. Run the build script and commit the generated HTML. The build writes route directories directly; no `dist` folder is needed.
+
+## Deploy to Cloudflare Pages
+
+- Connect this GitHub repository to a **Cloudflare Pages** project.
+- Framework preset: **None**.
+- Build command: `python3 scripts/build.py` (or leave blank when committing generated HTML).
+- Build output directory: `/` (repository root).
+- Add `modernizedministry.com` as a custom domain and follow Cloudflare's DNS verification flow.
+- Ensure the `www` domain redirects to the canonical address if desired.
+
+> The repository commit does **not** publish the domain. It remains unconnected until Cloudflare Pages project/domain setup is complete.
+
+## Inquiry form delivery (not live until configured)
+
+`functions/api/inquiry.js` delivers the website contact form to a real inbox via Resend. Set these Cloudflare Pages **secrets/environment variables**:
+
+- `RESEND_API_KEY`: API key for a Resend account
+- `FROM_EMAIL`: a verified sender address/domain, e.g. `inquiries@modernizedministry.com`
+- `LEADS_TO_EMAIL`: the business inbox receiving contact leads
+
+The form intentionally returns an error until delivery is configured. It never displays fake success. Validate a real message end-to-end before accepting leads. Configure Cloudflare WAF rate limiting, monitor errors, and consider Turnstile for anti-spam before outreach campaigns. Ensure mailbox routing is working.
+
+## Truthful demos and safety
+
+- Haven Church is a **fictional church**. Service times, events and guest names are examples.
+- The Haven "Plan Your Visit" experience is deliberately **local-only** and never transmits/saves personal data.
+- The outreach phone is a **clickable simulation**; it sends **no** texts or emails. A real church workflow requires opt-in, unsubscribe support, proper consent language and staff handoffs.
+- No fake customer testimonials, results, or partner logos are used. Portfolio examples are clearly identified as concepts.
+- Prices are package **outlines** without invented rates. Fill in confirmed setup/monthly figures before publishing the sales site.
+- The current privacy notice is a starting point, not legal review. Update when adding analytics, advertising or other processors.
+
+## Asset provenance
+
+`assets/worship.webp`, `assets/connection.webp`, `assets/future.webp` and the additional `assets/worship-wide.webp`, `assets/ministry-tech.webp`, `assets/church-future.webp` are generated imagery commissioned for this project. All assets are stored in the repository—not remote image links. `assets/social-preview.jpg` is the prior generated brand share preview.
+
+## Next milestones
+
+1. Validate exact published package prices, service scope, and contractual terms.
+2. Configure Resend sender + inbox and test the form end to end.
+3. Set up Cloudflare Pages and connect `modernizedministry.com`.
+4. Replace simulated visitor journey with real platform integration only after explicit opt-in design and messaging compliance review.
+5. Add real client work, case studies and testimonials as they become available.
