@@ -24,19 +24,19 @@ A premium, mobile-first, **multi-page** site for [modernizedministry.com](https:
 No npm or bundler required. Static HTML, one shared CSS file, one shared JS file, optimized local image assets.
 
 ```sh
-python3 scripts/build.py   # rebuild static pages from the content source
+python3 scripts/deploy.py   # stage the reviewed HTML and assets in dist/
 python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-**Edit page copy/structure in `scripts/build.py`**, shared design in `assets/site.css`, and interactions in `assets/site.js`. Run the build script and commit the generated HTML. The build writes route directories directly; no `dist` folder is needed.
+**Edit the reviewed HTML pages directly**, shared design in `assets/site.css`, and interactions in `assets/site.js`. Run `python3 scripts/deploy.py` for Cloudflare deployment staging. **Do not use the legacy `scripts/build.py` during deployment**: that generator predates the current marble/gold pages and could overwrite newer content.
 
 ## Deploy to Cloudflare Pages
 
 - Connect this GitHub repository to a **Cloudflare Pages** project.
 - Framework preset: **None**.
-- Build command: `python3 scripts/build.py` (or leave blank when committing generated HTML).
-- Build output directory: `/` (repository root).
+- Build command: `python3 scripts/deploy.py`.
+- Build output directory: `dist`.
 - Add `modernizedministry.com` as a custom domain and follow Cloudflare's DNS verification flow.
 - Ensure the `www` domain redirects to the canonical address if desired.
 

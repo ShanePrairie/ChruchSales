@@ -1,1 +1,11 @@
-{"name":"modernized-ministry","private":true,"version":"0.1.0","description":"Static multi-page agency site and church demo","scripts":{"build":"python3 scripts/build.py","serve":"python3 -m http.server 8080","check":"python3 -m py_compile scripts/build.py && node --check assets/site.js"}}
+{
+  "name": "modernized-ministry",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Static multi-page agency site and church demo",
+  "scripts": {
+    "build": "python3 scripts/deploy.py",
+    "serve": "python3 -m http.server 8080",
+    "check": "python3 -m py_compile scripts/deploy.py && node --check assets/site.js"
+  }
+}
