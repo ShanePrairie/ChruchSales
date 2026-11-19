@@ -75,6 +75,6 @@ The form intentionally returns an error until delivery is configured. It never d
 
 ## Evidence and scenario model
 
-The Impact page cites Lifeway Research (2023) and Hartford Institute for Religion Research (2024, 2025) with direct links and survey context. The interactive calculator is **hypothetical**; baseline and improved retention rates are visitor-adjustable assumptions, not findings from these studies or documented results from Modernized Ministry. Giving is an estimated **annualized run-rate**, not donations already raised.
+The Impact page cites Lifeway Research (2023) and Hartford Institute for Religion Research (2024 digital and financial surveys, 2025) with direct links and survey context. The interactive calculator is **hypothetical**; baseline and improved retention rates are visitor-adjustable assumptions, not findings from these studies or documented results from Modernized Ministry. Giving is an estimated **annualized run-rate**, not donations already raised.
 
 Creative direction: light ivory/white with new original marble-and-gold wave background. Reduced-motion and accessible contrast included.
