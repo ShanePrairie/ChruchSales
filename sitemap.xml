@@ -1,12 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
- <url><loc>https://modernizedministry.com/</loc></url>
- <url><loc>https://modernizedministry.com/flagship/</loc></url>
- <url><loc>https://modernizedministry.com/solutions/</loc></url>
- <url><loc>https://modernizedministry.com/outreach/</loc></url>
- <url><loc>https://modernizedministry.com/work/</loc></url>
- <url><loc>https://modernizedministry.com/packages/</loc></url>
- <url><loc>https://modernizedministry.com/process/</loc></url>
- <url><loc>https://modernizedministry.com/contact/</loc></url>
- <url><loc>https://modernizedministry.com/privacy/</loc></url>
-</urlset>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:urlset xmlns:ns0="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <ns0:url>
+    <ns0:loc>https://modernizedministry.com/</ns0:loc>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://modernizedministry.com/flagship/</ns0:loc>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://modernizedministry.com/solutions/</ns0:loc>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://modernizedministry.com/outreach/</ns0:loc>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://modernizedministry.com/work/</ns0:loc>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://modernizedministry.com/packages/</ns0:loc>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://modernizedministry.com/process/</ns0:loc>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://modernizedministry.com/contact/</ns0:loc>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://modernizedministry.com/privacy/</ns0:loc>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://modernizedministry.com/impact/</ns0:loc>
+  </ns0:url>
+</ns0:urlset>

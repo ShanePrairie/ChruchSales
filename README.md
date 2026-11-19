@@ -11,6 +11,7 @@ A premium, mobile-first, **multi-page** site for [modernizedministry.com](https:
 | `/` | About Modernized Ministry: brand, why we exist, mission and story |
 | `/flagship/` | Interactive Haven Church flagship website *concept* (fictional) |
 | `/solutions/` | Church websites, texts, email, and digital ministry systems |
+| `/impact/` | Verified church discovery/digital worship research and an explicit scenario calculator for return visits, connected households, and hypothetical giving. |
 | `/outreach/` | Interactive four-step guest journey / phone preview |
 | `/work/` | Original portfolio concepts, clearly labeled demonstrations |
 | `/packages/` | Presence / Connection / Flagship package outlines |
@@ -71,3 +72,9 @@ The form intentionally returns an error until delivery is configured. It never d
 3. Set up Cloudflare Pages and connect `modernizedministry.com`.
 4. Replace simulated visitor journey with real platform integration only after explicit opt-in design and messaging compliance review.
 5. Add real client work, case studies and testimonials as they become available.
+
+## Evidence and scenario model
+
+The Impact page cites Lifeway Research (2023) and Hartford Institute for Religion Research (2024, 2025) with direct links and survey context. The interactive calculator is **hypothetical**; baseline and improved retention rates are visitor-adjustable assumptions, not findings from these studies or documented results from Modernized Ministry. Giving is an estimated **annualized run-rate**, not donations already raised.
+
+Creative direction: light ivory/white with new original marble-and-gold wave background. Reduced-motion and accessible contrast included.

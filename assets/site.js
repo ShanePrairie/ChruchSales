@@ -29,3 +29,26 @@
  visitForm?.addEventListener('submit',e=>{e.preventDefault();if(!visitForm.reportValidity())return;const name=(visitForm.elements.namedItem('firstName')?.value||'friend').trim().slice(0,80);visitForm.hidden=true;if(visitSummary){visitSummary.hidden=false;const bold=document.createElement('strong');bold.textContent='We’ll save you a seat, '+name+'!';visitSummary.replaceChildren(bold,document.createElement('br'),document.createTextNode('This is a simulated confirmation inside a fictional church demo. No information was saved or sent.'))}});
  document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 })();
+
+// Research-impact scenario: independent, user-adjustable assumptions—not measured ministry results.
+(()=>{
+  const form=document.getElementById('impactModel');if(!form)return;
+  const ids={leads:['modelLeads','leadsOut',''],visit:['modelVisit','visitOut','%'],before:['modelBefore','beforeOut','%'],after:['modelAfter','afterOut','%'],connect:['modelConnect','connectOut','%'],giving:['modelGiving','givingOut','$'],participation:['modelParticipation','participationOut','%']};
+  const num=new Intl.NumberFormat('en-US',{maximumFractionDigits:0});const money=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  const el=id=>document.getElementById(id);
+  function calculate(){
+    const values={};Object.entries(ids).forEach(([key,[input,out,suffix]])=>{const n=Number(el(input).value);values[key]=n;el(out).textContent=suffix==='$'?money.format(n):num.format(n)+suffix});
+    const firstVisits=values.leads*values.visit/100;
+    const baseline=firstVisits*values.before/100*12;
+    const improved=firstVisits*values.after/100*12;
+    const additional=Math.max(0,improved-baseline);
+    const connected=additional*values.connect/100;
+    const annualized=connected*values.participation/100*values.giving*12;
+    el('baselineReturns').textContent=num.format(baseline);
+    el('followupReturns').textContent=num.format(improved);
+    el('additionalReturns').textContent='+'+num.format(additional);
+    el('additionalConnected').textContent='+'+num.format(connected);
+    el('additionalGiving').textContent=money.format(annualized);
+  }
+  form.addEventListener('input',calculate);form.addEventListener('reset',()=>requestAnimationFrame(calculate));calculate();
+})();
