@@ -17,7 +17,7 @@ A premium, mobile-first, **multi-page** site for [modernizedministry.com](https:
 | `/packages/` | Presence / Connection / Flagship package outlines |
 | `/process/` | Discovery, design, build and ongoing support |
 | `/contact/` | Actual inquiry form backed by optional Cloudflare Pages Function |
-| `/privacy/` | Basic data handling notice; update upon adding analytics/integrations |
+| `/privacy/` | Data handling notice, including cookie-free Cloudflare Web Analytics |
 
 ## Development
 
@@ -59,7 +59,7 @@ The form intentionally returns an error until delivery is configured. It never d
 - The outreach phone is a **clickable simulation**; it sends **no** texts or emails. A real church workflow requires opt-in, unsubscribe support, proper consent language and staff handoffs.
 - No fake customer testimonials, results, or partner logos are used. Portfolio examples are clearly identified as concepts.
 - Prices are package **outlines** without invented rates. Fill in confirmed setup/monthly figures before publishing the sales site.
-- The current privacy notice is a starting point, not legal review. Update when adding analytics, advertising or other processors.
+- The current privacy notice is a starting point, not legal review. It discloses cookie-free Cloudflare Web Analytics. Update it when adding advertising pixels or other processors.
 
 ## Asset provenance
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Stage reviewed static site files for Cloudflare Pages without regenerating them."""
+import re
 from pathlib import Path
 from shutil import copy2, rmtree
 
@@ -9,7 +10,21 @@ if DIST.exists():
     rmtree(DIST)
 DIST.mkdir()
 
-files = ["index.html", "_headers", "robots.txt", "sitemap.xml"]
+files = [
+    "index.html",
+    "404.html",
+    "_headers",
+    "robots.txt",
+    "sitemap.xml",
+    "manifest.webmanifest",
+    "favicon.ico",
+]
+key_files = sorted(
+    path.name for path in ROOT.glob("*.txt") if re.fullmatch(r"[0-9a-f]{32}", path.stem)
+)
+if len(key_files) != 1:
+    raise FileNotFoundError(f"Expected one IndexNow key file, found {key_files}")
+files.append(key_files[0])
 for section in ["flagship", "solutions", "impact", "outreach", "work",
                 "packages", "process", "contact", "privacy"]:
     files.append(f"{section}/index.html")
