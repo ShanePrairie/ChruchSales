@@ -29,6 +29,12 @@ for section in ["flagship", "solutions", "impact", "outreach", "work",
                 "packages", "process", "contact", "privacy"]:
     files.append(f"{section}/index.html")
 
+# Publish every reviewed article and the journal index; do not regenerate pages.
+blog_root = ROOT / "blog"
+if not (blog_root / "index.html").exists():
+    raise FileNotFoundError("Journal index is missing: blog/index.html")
+files.extend(str(path.relative_to(ROOT)) for path in sorted(blog_root.rglob("index.html")))
+
 for source in sorted((ROOT / "assets").iterdir()):
     if source.is_file() and source.suffix.lower() in {".css", ".js", ".svg", ".webp", ".png", ".jpg", ".jpeg", ".ico"}:
         files.append(f"assets/{source.name}")

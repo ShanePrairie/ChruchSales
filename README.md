@@ -9,6 +9,7 @@ A premium, mobile-first, **multi-page** site for [modernizedministry.com](https:
 | Route | Purpose |
 | --- | --- |
 | `/` | About Modernized Ministry: brand, why we exist, mission and story |
+| `/blog/` | Church growth and digital outreach resource journal, with 13 original guides |
 | `/flagship/` | Interactive Haven Church flagship website *concept* (fictional) |
 | `/solutions/` | Church websites, texts, email, and digital ministry systems |
 | `/impact/` | Verified church discovery/digital worship research and an explicit scenario calculator for return visits, connected households, and hypothetical giving. |
@@ -78,3 +79,11 @@ The form intentionally returns an error until delivery is configured. It never d
 The Impact page cites Lifeway Research (2023) and Hartford Institute for Religion Research (2024 digital and financial surveys, 2025) with direct links and survey context. The interactive calculator is **hypothetical**; baseline and improved retention rates are visitor-adjustable assumptions, not findings from these studies or documented results from Modernized Ministry. Giving is an estimated **annualized run-rate**, not donations already raised.
 
 Creative direction: light ivory/white with new original marble-and-gold wave background. Reduced-motion and accessible contrast included.
+
+## Church growth journal and SEO
+
+The static, searchable journal lives in `blog/`, with thirteen original, distinct articles about church marketing, local search, visitor follow-up, outreach, websites, livestreams, online giving and messaging. Each article has a canonical URL, descriptive metadata, organization author identification, BlogPosting structured data, breadcrumbs, related guides and links to relevant services. The journal index is linked in the main site navigation and `sitemap.xml`.
+
+`python3 scripts/deploy.py` stages all `blog/**/index.html` pages and `assets/blog.css`. The blog is not powered by a CMS; edit the reviewed HTML directly to publish updates and keep the dates and sitemap accurate. Before generating new keyword pages, confirm that they serve a distinct, useful search intent: do not create doorway city pages or stuff repetitive terms. Google Search Console indexing and performance tracking require separate setup with domain ownership verification after deployment.
+
+**Publishing reminder:** A repository commit is not proof that Cloudflare Pages deployed it. Check the public URLs and their HTML after each release.
