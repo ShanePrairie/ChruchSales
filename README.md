@@ -1,6 +1,6 @@
 # Modernized Ministry — ChurchSales
 
-A premium, mobile-first, **multi-page** site for [modernizedministry.com](https://modernizedministry.com), plus an interactive fictional flagship church demo.
+A premium, mobile-first, **multi-page** site for [modernizedministry.com](https://modernizedministry.com), an outreach group founded and based in Illinois, plus an interactive fictional flagship church demo.
 
 > GitHub repo is `ShanePrairie/ChruchSales` (original repository spelling). The customer-facing brand and domain are spelled correctly.
 
@@ -29,7 +29,7 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-**Edit the reviewed HTML pages directly**, shared design in `assets/site.css`, and interactions in `assets/site.js`. Run `python3 scripts/deploy.py` for Cloudflare deployment staging. **Do not use the legacy `scripts/build.py` during deployment**: that generator predates the current marble/gold pages and could overwrite newer content.
+**Edit the reviewed HTML pages directly**, shared design in `assets/site.css`, and interactions in `assets/site.js`. Run `python3 scripts/deploy.py` for Cloudflare deployment staging. The old `scripts/build.py` is now a safe compatibility entry point that invokes `deploy.py` without regenerating or overwriting the reviewed pages.
 
 ## Deploy to Cloudflare Pages
 
