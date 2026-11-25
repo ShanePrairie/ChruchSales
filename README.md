@@ -82,7 +82,7 @@ Creative direction: light ivory/white with new original marble-and-gold wave bac
 
 ## Church growth journal and SEO
 
-The static, searchable journal lives in `blog/`, with thirteen original, distinct articles about church marketing, local search, visitor follow-up, outreach, websites, livestreams, online giving and messaging. Each article has a canonical URL, descriptive metadata, organization author identification, BlogPosting structured data, breadcrumbs, related guides and links to relevant services. The journal index is linked in the main site navigation and `sitemap.xml`.
+The static, searchable journal lives in `blog/`, with original, distinct articles about church marketing, local search, visitor follow-up, outreach, websites, livestreams, online giving and messaging. Each article has a canonical URL, descriptive metadata, organization author identification, BlogPosting structured data, breadcrumbs, related guides and links to relevant services. The journal index is linked in the main site navigation and `sitemap.xml`.
 
 `python3 scripts/deploy.py` stages all `blog/**/index.html` pages and `assets/blog.css`. The blog is not powered by a CMS; edit the reviewed HTML directly to publish updates and keep the dates and sitemap accurate. Before generating new keyword pages, confirm that they serve a distinct, useful search intent: do not create doorway city pages or stuff repetitive terms. Google Search Console indexing and performance tracking require separate setup with domain ownership verification after deployment.
 
